@@ -1,0 +1,7 @@
+# Handle text files automatically
+* text=auto
+
+# Ensure data files don't get messed with by line-ending conversions
+*.geojson binary
+*.graphml binary
+*.csv text eol=lf

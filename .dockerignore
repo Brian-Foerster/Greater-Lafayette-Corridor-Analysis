@@ -1,0 +1,40 @@
+# Git and IDE
+.git/
+.github/
+.claude/
+.idea/
+.vscode/
+.env
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg
+
+# Large untracked data
+data/raw/dem_tippecanoe.tif
+data/raw/*.tif
+data/processed/
+cache/
+notebooks/
+
+# Test/coverage artifacts
+htmlcov/
+.coverage
+.tox/
+.cache/
+
+# Docs (not needed at runtime)
+docs/
+*.md
+!README.md
+
+# Archive
+archive/

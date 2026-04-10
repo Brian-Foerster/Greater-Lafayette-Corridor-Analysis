@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "ZONE_ID": 1001.0 },
+      "geometry": { "type": "Point", "coordinates": [ -86.925, 40.425 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "ZONE_ID": 1002 },
+      "geometry": { "type": "Point", "coordinates": [ -86.915, 40.435 ] }
+    }
+  ]
+}

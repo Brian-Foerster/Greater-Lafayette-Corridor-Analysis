@@ -1,0 +1,31 @@
+services:
+  urbansim-apm:
+    build: .
+    volumes:
+      # Persist generated outputs and caches across runs
+      - ./data/processed:/app/data/processed
+      - ./cache:/app/cache
+    environment:
+      PYTHONUNBUFFERED: "1"
+    ports:
+      # Viewer server (bottle) when using --serve
+      - "8080:8080"
+
+  # Run the full feedback loop for all three zoning scenarios
+  feedback-loop:
+    build: .
+    volumes:
+      - ./data/processed:/app/data/processed
+      - ./cache:/app/cache
+    environment:
+      PYTHONUNBUFFERED: "1"
+    ports:
+      - "8080:8080"
+    command: >
+      python scripts/run_feedback_loop.py
+        --all-scenarios --serve
+
+  # Run the fast test suite
+  test:
+    build: .
+    command: python -m pytest tests/ -x -q -m "not slow"

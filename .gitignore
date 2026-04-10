@@ -1,0 +1,82 @@
+# Environment / secrets
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+.venv/
+.venv_test/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+.idea/
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
+nul
+
+# All processed data is regenerable from raw data + code
+data/processed/
+!data/processed/.gitkeep
+
+# Downloadable / large raw data
+data/raw/lehd/*.csv
+data/raw/lehd/in_*_2023.csv.gz
+data/raw/congestion_sample_segments.json
+data/raw/**/*.shp
+data/raw/*.tif
+*.tif
+
+# Runtime caches
+cache/
+
+# Notebooks (exploratory, not pipeline)
+notebooks/
+
+
+# Claude Code config
+.claude/

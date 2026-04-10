@@ -1,0 +1,8 @@
+# Dev/CI extras — install after requirements.txt
+# Usage: pip install -r requirements-dev.txt
+
+# Testing
+pytest-cov>=4.1
+
+# Optional network analysis (used by some tests)
+pandana>=0.7

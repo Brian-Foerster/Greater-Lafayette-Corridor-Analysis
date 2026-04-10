@@ -1,0 +1,20 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+35,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,35,Park East Boulevard,35 Park East Boulevard,3,64FFDA,000000
+21,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,21,McCormick Road,21 McCormick Road,3,AEEA00,000000
+42,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,42,Happy Hollow Road,42 Happy Hollow Road,3,F50057,000000
+11,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,11,Creasy Lane,11 Creasy Lane,3,FFEA00,000000
+31,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,31,North 9th Street,31 North 9th Street,3,FF6F61,000000
+22,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,22,Salisbury Street,22 Salisbury Street,3,1DE9B6,000000
+43,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,43,Northwestern Avenue,43 Northwestern Avenue,3,FF80AB,000000
+41,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,41,The Connector,41 The Connector,3,00E5FF,000000
+33,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,33,Ferry Street,33 Ferry Street,3,C6FF00,000000
+14,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,14,Brady Lane,14 Brady Lane,3,651FFF,000000
+12,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,12,South Street,12 South Street,3,2979FF,000000
+52E,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,52E,Cumberland Express,"52E Cumberland Express Operates Monday - Friday during Purdue's Fall & Spring Semesters, on days when classes are held",3,6200EA,FFFFFF
+23,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,23,Sagamore West,23 Sagamore West,3,00E5FF,000000
+13,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,13,Main Street,13 Main Street,3,FF6F00,000000
+53E,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,53E,Lindberg Express,"53E Lindberg Express Operates Monday - Friday during Purdue's Fall & Spring Semesters, on days when classes are held",3,FFD600,000000
+51E,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,51E,Lark & Alight Express,"51E Lark & Alight Express, Operates Monday - Friday during Purdue's Fall & Spring Semesters, on days when classes are held",3,D500F9,000000
+36,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,36,South 18th Street,36 South 18th Street,3,FF9100,000000
+34,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,34,Teal Road,34 Teal Road,3,FF4081,000000
+32,9eca155d-a6ad-42b1-8ad5-4888c7c42aaa,32,Schuyler Avenue,32 Schuyler Avenue,3,00B8D4,000000

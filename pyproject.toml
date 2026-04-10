@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urbansim-apm"
+version = "4.0.0a1"
+description = "Greater Lafayette APM/BRT corridor evaluation model"
+license = {text = "BSD-3-Clause"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Brian Foerster"},
+]
+
+# ── Core dependencies (everything the pipeline actually imports) ──────
+dependencies = [
+    "numpy>=1.26,<2",
+    "pandas>=2.1",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "fiona>=1.9",
+    "pyproj>=3.6",
+    "rtree>=1.1",
+    "networkx>=3.2",
+    "numpy-financial>=1.0",
+    "matplotlib>=3.8",
+    "jinja2>=3.1",
+    "requests>=2.31",
+    "psutil>=5.9",
+]
+
+# ── Optional extras ──────────────────────────────────────────────────
+[project.optional-dependencies]
+viewer = [
+    "plotly>=5.18",
+    "streamlit>=1.30",
+    "streamlit-folium>=0.15",
+    "contextily>=1.5",
+]
+network = [
+    "osmnx>=1.7",
+    "pandana>=0.7",
+]
+sensitivity = [
+    "joblib>=1.3",
+]
+dev = [
+    "pytest>=9.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["src*", "scripts*", "urbansim*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::FutureWarning:pandas",
+    "ignore::DeprecationWarning:pyproj",
+]

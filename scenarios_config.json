@@ -1,0 +1,456 @@
+{
+  "scenarios": {
+    "1_status_quo": {
+      "scenario_id": "1_status_quo",
+      "display_name": "Status Quo",
+      "description": "Current conditions with no bus integration or zoning changes",
+      "assumptions": {
+        "bus_integration": "None",
+        "zoning_changes": "None",
+        "parking_management": "Current",
+        "pricing_strategy": "Flat fare only",
+        "frequency": "15-minute headway"
+      },
+      "parameters": {
+        "base_daily_riders": 8641,
+        "bus_integration_multiplier": 0.0,
+        "zoning_multiplier": 0.0,
+        "pricing_multiplier": 0.0,
+        "frequency_multiplier": 1.0,
+        "car_parking_cost": 0.5
+      },
+      "metrics": {
+        "daily_riders": 4500,
+        "annual_riders_mm": 1.64,
+        "annual_revenue_mm": 9.44,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 0.40,
+        "payback_years": 35.0,
+        "viable": false
+      },
+      "risk_level": "EXTREME",
+      "confidence": "HIGH",
+      "notes": "Not economically viable without improvements"
+    },
+    "2_conservative": {
+      "scenario_id": "2_conservative",
+      "display_name": "Conservative",
+      "description": "Partial bus integration (50%) with modest zoning changes",
+      "assumptions": {
+        "bus_integration": "Partial (50% benefit)",
+        "zoning_changes": "Modest density increases",
+        "parking_management": "Modest improvements",
+        "pricing_strategy": "Flat + 20% peak premium",
+        "frequency": "12-minute headway"
+      },
+      "parameters": {
+        "base_daily_riders": 8641,
+        "bus_integration_multiplier": 0.13,
+        "zoning_multiplier": 0.15,
+        "pricing_multiplier": 0.1,
+        "frequency_multiplier": 1.1,
+        "car_parking_cost": 2.0
+      },
+      "metrics": {
+        "daily_riders": 6000,
+        "annual_riders_mm": 2.19,
+        "annual_revenue_mm": 12.59,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 0.62,
+        "payback_years": 18.5,
+        "viable": false
+      },
+      "risk_level": "HIGH",
+      "confidence": "HIGH",
+      "notes": "Marginal viability; requires careful operations management"
+    },
+    "3_baseline_recommended": {
+      "scenario_id": "3_baseline_recommended",
+      "display_name": "Baseline (Recommended)",
+      "description": "Full bus integration with moderate zoning support",
+      "assumptions": {
+        "bus_integration": "Full integration",
+        "zoning_changes": "Moderate TOD support",
+        "parking_management": "Moderate pricing/restrictions",
+        "pricing_strategy": "Flat + 25% peak premium",
+        "frequency": "10-minute headway"
+      },
+      "parameters": {
+        "base_daily_riders": 8641,
+        "bus_integration_multiplier": 0.26,
+        "zoning_multiplier": 0.35,
+        "pricing_multiplier": 0.15,
+        "frequency_multiplier": 1.2,
+        "car_parking_cost": 3.5
+      },
+      "metrics": {
+        "daily_riders": 7574,
+        "annual_riders_mm": 2.76,
+        "annual_revenue_mm": 15.90,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 0.86,
+        "payback_years": 14.0,
+        "viable": true
+      },
+      "risk_level": "MEDIUM",
+      "confidence": "HIGH",
+      "notes": "Recommended baseline with achievable targets."
+    },
+    "4_optimistic_full_integration": {
+      "scenario_id": "4_optimistic_full_integration",
+      "display_name": "Optimistic (Full Integration - Corridor-Specific)",
+      "description": "Full bus integration with aggressive zoning and pricing. Uses data-driven corridor-specific multipliers based on employment concentration and TOD potential.",
+      "assumptions": {
+        "bus_integration": "Full integration + premium service",
+        "zoning_changes": "Aggressive TOD zoning",
+        "parking_management": "Aggressive pricing/restrictions",
+        "pricing_strategy": "Flat + 30% peak premium + distance-based",
+        "frequency": "8-minute headway",
+        "scenario_type": "corridor-specific"
+      },
+      "parameters": {
+        "base_daily_riders": 8641,
+        "bus_integration_multiplier": 0.26,
+        "zoning_multiplier": 0.50,
+        "pricing_multiplier": 0.2,
+        "frequency_multiplier": 1.3,
+        "car_parking_cost": 5.0,
+        "use_corridor_specific": true,
+        "corridor_specific_data_file": "data/processed/scenarios/corridor_specific_optimistic.csv"
+      },
+      "metrics": {
+        "daily_riders": 10271,
+        "annual_riders_mm": 3.75,
+        "annual_revenue_mm": 21.56,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 1.35,
+        "payback_years": 8.5,
+        "viable": true
+      },
+      "risk_level": "MEDIUM",
+      "confidence": "HIGH",
+      "notes": "Top-10 corridor average. Uses employment concentration, transit competition, and TOD potential data to differentiate multipliers by corridor."
+    },
+    "5_current_zoning": {
+      "scenario_id": "5_current_zoning",
+      "display_name": "Current Zoning (Status Quo)",
+      "description": "Full bus integration with existing FAR limits maintained",
+      "assumptions": {
+        "bus_integration": "Full integration",
+        "zoning_changes": "None (existing FAR limits)",
+        "parking_management": "Current",
+        "pricing_strategy": "Flat + 20% peak premium",
+        "frequency": "10-minute headway"
+      },
+      "parameters": {
+        "base_daily_riders": 7574,
+        "bus_integration_multiplier": 0.26,
+        "zoning_multiplier": 0.0,
+        "pricing_multiplier": 0.12,
+        "frequency_multiplier": 1.2,
+        "car_parking_cost": 1.0,
+        "development_scenario": "current_zoning"
+      },
+      "metrics": {
+        "daily_riders": 7574,
+        "annual_riders_mm": 2.76,
+        "annual_revenue_mm": 15.90,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 0.86,
+        "payback_years": 14.0,
+        "viable": true
+      },
+      "risk_level": "MEDIUM",
+      "confidence": "HIGH",
+      "notes": "Base case with existing zoning. Development constrained by current FAR limits."
+    },
+    "5b_no_zoning": {
+      "scenario_id": "5b_no_zoning",
+      "display_name": "No Zoning (Uncapped FAR)",
+      "description": "Full bus integration with all FAR caps removed within TIF boundary",
+      "assumptions": {
+        "bus_integration": "Full integration",
+        "zoning_changes": "All FAR caps removed",
+        "parking_management": "Current",
+        "pricing_strategy": "Flat + 20% peak premium",
+        "frequency": "10-minute headway"
+      },
+      "parameters": {
+        "base_daily_riders": 7574,
+        "bus_integration_multiplier": 0.26,
+        "zoning_multiplier": 1.0,
+        "pricing_multiplier": 0.12,
+        "frequency_multiplier": 1.2,
+        "car_parking_cost": 1.0,
+        "development_scenario": "no_zoning"
+      },
+      "metrics": {
+        "daily_riders": 7574,
+        "annual_riders_mm": 2.76,
+        "annual_revenue_mm": 15.90,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 0.0,
+        "payback_years": 0.0,
+        "viable": false
+      },
+      "risk_level": "HIGH",
+      "confidence": "LOW",
+      "notes": "Maximum development potential. Metrics will be populated after feedback loop run with no_zoning scenario."
+    },
+    "6_zoning_dependent": {
+      "scenario_id": "6_zoning_dependent",
+      "display_name": "Zoning-Dependent",
+      "description": "Partial bus integration with aggressive zoning and parking management",
+      "assumptions": {
+        "bus_integration": "Partial (70% benefit)",
+        "zoning_changes": "Aggressive TOD zoning",
+        "parking_management": "Aggressive pricing/restrictions",
+        "pricing_strategy": "Flat + 25% peak premium",
+        "frequency": "12-minute headway"
+      },
+      "parameters": {
+        "base_daily_riders": 8641,
+        "bus_integration_multiplier": 0.18,
+        "zoning_multiplier": 0.50,
+        "pricing_multiplier": 0.14,
+        "frequency_multiplier": 1.15,
+        "car_parking_cost": 4.0
+      },
+      "metrics": {
+        "daily_riders": 10271,
+        "annual_riders_mm": 3.75,
+        "annual_revenue_mm": 21.56,
+        "annual_operating_cost_mm": 3.5,
+        "annual_debt_service_mm": 32.9,
+        "debt_coverage_ratio": 1.35,
+        "payback_years": 8.5,
+        "viable": true
+      },
+      "risk_level": "HIGH",
+      "confidence": "MEDIUM",
+      "notes": "Strong upside but highly dependent on zoning policy execution. Significant implementation risk."
+    },
+    "7_current_zoning_brt": {
+      "scenario_id": "7_current_zoning_brt",
+      "display_name": "Current Zoning (BRT)",
+      "description": "BRT alternative with existing FAR limits — lower capital cost, lower ridership",
+      "assumptions": {
+        "bus_integration": "Full integration",
+        "zoning_changes": "None (existing FAR limits)",
+        "parking_management": "Current",
+        "pricing_strategy": "Flat fare",
+        "frequency": "5-minute headway",
+        "transit_technology": "BRT"
+      },
+      "parameters": {
+        "base_daily_riders": 7574,
+        "bus_integration_multiplier": 0.26,
+        "zoning_multiplier": 0.0,
+        "pricing_multiplier": 0.12,
+        "frequency_multiplier": 1.2,
+        "car_parking_cost": 1.0,
+        "development_scenario": "current_zoning",
+        "transit_mode": "brt"
+      },
+      "metrics": {},
+      "risk_level": "MEDIUM",
+      "confidence": "LOW",
+      "notes": "BRT comparison scenario. Metrics populated after feedback loop run."
+    }
+  },
+  "model_options": {
+    "bus_restructuring": "reactive",
+    "uncertainty_correlation": false,
+    "behavioral_sensitivity": false,
+    "behavioral_sensitivity_lhs_points": 20,
+    "transit_mode": "apm",
+    "alternative": "build",
+    "opening_delay_years": 0,
+    "phase_1_stations": null,
+    "phase_2_start_year": null,
+    "equity_analysis": false,
+    "equity_feeder_weighting": false,
+    "equity_financial_weight": 0.60,
+    "equity_uplift": 0.5,
+    "cejst_tracts_path": null,
+    "displacement_tracking": false,
+    "decision_package_maps": false,
+    "fta_cost_effectiveness": false,
+    "robust_ranking": false,
+    "robust_ranking_metric": "cvar",
+    "technical_appendix_auto": false
+  },
+  "metadata": {
+    "created": "2026-03-07",
+    "base_daily_riders": 7574,
+    "annual_debt_service_mm": 32.9,
+    "viability_threshold_dcr": 0.85,
+    "base_fare_daily": 5.75,
+    "default_car_parking_cost": 0.0,
+    "reference_parking_costs": {
+      "current_low": 0.5,
+      "moderate": 3.0,
+      "high": 5.0
+    },
+    "peak_premium_base": 1.25,
+    "demand_driven_development": {
+      "description": "Exogenous metro growth and corridor capture parameters for the demand-driven development model. Replaces proportional-absorption with demand-gap targeting (DiPasquale-Wheaton 1992).",
+      "metro_growth": {
+        "metro_population": 232000.0,
+        "metro_jobs": 95000.0,
+        "annual_pop_growth_rate": 0.015,
+        "annual_job_growth_rate": 0.018,
+        "avg_household_size": 2.4,
+        "sqft_per_employee": 250.0,
+        "avg_unit_sqft": 900.0
+      },
+      "market_equilibrium": {
+        "target_vacancy_residential": 0.07,
+        "target_vacancy_commercial": 0.10,
+        "rent_adjustment_speed": 0.50,
+        "min_rent_multiplier": 0.60,
+        "max_rent_multiplier": 1.40
+      },
+      "corridor_capture": {
+        "base_corridor_capture_rate": 0.10,
+        "max_corridor_capture_rate": 0.25,
+        "capture_ramp_years": 15.0
+      },
+      "zoning_cost_adjustment": {
+        "description": "Scenario-dependent total cost multiplier from zoning relaxation. NAHB/NMHC 2022 regulatory cost survey adjusted for Indiana (WRLURI light-regulation). Zoning-sensitive costs in Indiana ~8.8% of total: rezoning 2.0%, NIMBY 1.5%, impact fees 5.0%, delay interest 0.3%.",
+        "cost_multiplier_current_zoning": 1.000,
+        "cost_multiplier_no_zoning": 0.936
+      },
+      "sources": [
+        "IBRC Lafayette MSA Forecast 2024: 1.5% annual pop growth",
+        "FRED LWLPOP series: MSA population ~232K (2022)",
+        "Census ACS: avg household size 2.4",
+        "Saiz 2010 QJE: Midwest housing supply elasticity",
+        "TCRP/Nelson 2013: 10-25% metro growth captured near transit",
+        "NAHB/NMHC 2022: Regulation 40.6% of multifamily development costs",
+        "Gyourko et al. 2021: Wharton Residential Land Use Regulatory Index"
+      ]
+    },
+    "uncertainty_framework": {
+      "description": "Week 21 Monte Carlo assumptions for online-data-driven uncertainty ranges.",
+      "runner_defaults": {
+        "n_draws": 2000,
+        "random_seed": 42,
+        "percentiles": [10, 50, 90],
+        "viability_threshold_dcr": 1.0
+      },
+      "parameter_ranges": {
+        "ridership_multiplier": {
+          "distribution": "triangular",
+          "low": 0.8,
+          "mode": 1.0,
+          "high": 1.25
+        },
+        "tif_multiplier": {
+          "distribution": "triangular",
+          "low": 0.75,
+          "mode": 1.0,
+          "high": 1.3
+        },
+        "capital_cost_multiplier": {
+          "distribution": "triangular",
+          "low": 0.9,
+          "mode": 1.0,
+          "high": 1.25
+        },
+        "operating_cost_multiplier": {
+          "distribution": "triangular",
+          "low": 0.9,
+          "mode": 1.0,
+          "high": 1.2
+        },
+        "fare_multiplier": {
+          "distribution": "triangular",
+          "low": 0.9,
+          "mode": 1.0,
+          "high": 1.1
+        },
+        "discount_rate_delta": {
+          "distribution": "triangular",
+          "low": -0.01,
+          "mode": 0.0,
+          "high": 0.01
+        },
+        "tif_capture_rate": {
+          "distribution": "triangular",
+          "low": 0.75,
+          "mode": 0.85,
+          "high": 1.00,
+          "note": "Statutory max 1.00 (IC 36-7-14); effective rate lower due to admin overhead, assessment lag, appeals. Base case uses 0.85; general TIF uncertainty already captured by tif_multiplier. This parameter documents the range for reference."
+        },
+        "confidence_ramp_midpoint_years": {
+          "distribution": "triangular",
+          "low": 5.0,
+          "mode": 7.0,
+          "high": 12.0,
+          "note": "IndyGo Red Line ~3yr, Portland MAX ~5yr, Minneapolis Green Line ~7yr; APM-specific data unavailable. Requires feedback loop re-run to apply (not used in post-hoc Monte Carlo)."
+        },
+        "confidence_ramp_min": {
+          "distribution": "triangular",
+          "low": 0.15,
+          "mode": 0.30,
+          "high": 0.50,
+          "note": "Opening-day developer confidence; varies with pre-construction marketing and land assembly. Requires feedback loop re-run to apply (not used in post-hoc Monte Carlo)."
+        },
+        "student_demand_multiplier": {
+          "distribution": "triangular",
+          "low": 0.75,
+          "mode": 1.0,
+          "high": 1.30,
+          "note": "Combined uncertainty in student presence factor (0.20-0.30) and trip rate (1.8-2.2). Cross-checked against CityBus NTD data: 3.0M student trips/yr / 180 days / 54,651 enrolled = 0.30 bus trips/student/day as floor."
+        },
+        "congestion_elasticity": {
+          "distribution": "triangular",
+          "low": 0.15,
+          "mode": 0.30,
+          "high": 0.50,
+          "note": "Congestion-driven mode shift elasticity. Baseline 0.30 from model calibration. Range based on Duranton & Turner 2011 (0.2-0.4 for induced demand), Litman 2023 congestion pricing meta-analysis, and FHWA congestion feedback guidelines. Higher values = stronger transit mode shift from auto congestion."
+        }
+      },
+      "correlation_matrix": {
+        "description": "Gaussian copula correlation matrix for correlated Monte Carlo sampling (Iman-Conover procedure). Row/column order matches _PARAM_NAMES_ORDERED in apm_corridor_evaluation_integrated.py.",
+        "param_order": ["ridership_multiplier", "tif_multiplier", "capital_cost_multiplier", "operating_cost_multiplier", "fare_multiplier", "discount_rate_delta", "student_demand_multiplier", "beta_distance_mult", "employment_growth_rate", "zero_car_share_mult", "congestion_elasticity"],
+        "matrix": [
+          [1.0,  0.3,  0.0,  0.0,  0.1,  0.0],
+          [0.3,  1.0,  0.0,  0.0,  0.0,  0.0],
+          [0.0,  0.0,  1.0,  0.5,  0.0,  0.0],
+          [0.0,  0.0,  0.5,  1.0,  0.0,  0.0],
+          [0.1,  0.0,  0.0,  0.0,  1.0,  0.0],
+          [0.0,  0.0,  0.0,  0.0,  0.0,  1.0]
+        ]
+      }
+    },
+    "version": "1.0"
+  },
+  "stress_scenarios": {
+    "enrollment_shock": {
+      "student_demand_multiplier": 0.70,
+      "employment_growth_rate": -0.005
+    },
+    "cost_blowout": {
+      "capital_cost_multiplier": 1.40,
+      "om_cost_multiplier": 1.30,
+      "discount_rate_delta": 0.01
+    },
+    "transit_boom": {
+      "ridership_multiplier": 1.30,
+      "tif_capture_multiplier": 1.20
+    },
+    "stagflation": {
+      "employment_growth_rate": -0.005,
+      "capital_cost_multiplier": 1.25,
+      "fare_multiplier": 0.90
+    }
+  }
+}

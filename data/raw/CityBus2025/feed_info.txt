@@ -1,0 +1,2 @@
+feed_publisher_name,feed_publisher_url,feed_lang,default_lang,feed_start_date,feed_end_date,feed_version,feed_contact_email,feed_contact_url
+CityBus,https://gocitybus.com/,en,en,20260101,20260823,2026.1.1,info@gocitybus.com,https://gocitybus.com/

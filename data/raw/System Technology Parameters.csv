@@ -1,0 +1,5 @@
+Technology,Acceleration in m/s^2,Decceleration in m/s ^2,Max Speed in kmph,Dwell Time at station,Minimum Turn Radius in meters,Maximum Grade in Percent,Cost per Route km in millions of US dollars,Cost per station in millions of US dollars,average speed ex station dwell,stop spacing for bus in meters,Operating and maintence cost per route km in millions of dollars per year,Operating and maintence cost per station in millions of dollars per year,Operating and maintence cost per train hour in dollars
+Automated People Mover,1,1,80,30,45,6,55,15,,,0.4,0.25,85
+Local Bus,,,,20,,,,,20,200,,,
+Standard Bus,,,,20,,,,,25,400,,,
+Express Bus,,,,20,,,,,28,800,,,

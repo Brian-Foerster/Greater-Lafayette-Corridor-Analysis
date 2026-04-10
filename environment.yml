@@ -1,0 +1,23 @@
+name: urbansim-tippecanoe
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - geopandas
+  - shapely
+  - fiona
+  - pyproj
+  - rtree
+  - scipy
+  - scikit-learn
+  - networkx
+  - matplotlib
+  - jinja2
+  - requests
+  - pytest
+  - pip
+  - pip:
+    - numpy-financial
+    - pytest-cov
